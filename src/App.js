@@ -1,11 +1,21 @@
 import React from 'react';
 
-const Food = ({ fav }) => {
-  return <h1>I LOVE {fav}</h1>;
-};
+class App extends React.Component {
+  state = {
+    isLoading: true,
+    // movie: []
+  };
 
-const App = () => {
-  return <Food fav="PIZZA" hey="hey" />;
-};
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 3000);
+  }
+
+  render() {
+    const { isLoading } = this.state;
+    return <div>{isLoading ? 'Loading...' : 'Good to go!'}</div>;
+  }
+}
 
 export default App;
