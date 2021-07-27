@@ -1,7 +1,11 @@
 import React from 'react';
 
-function App() {
-  return <div></div>;
-}
+const Food = ({ fav }) => {
+  return <h1>I LOVE {fav}</h1>;
+};
+
+const App = () => {
+  return <Food fav="PIZZA" hey="hey" />;
+};
 
 export default App;
